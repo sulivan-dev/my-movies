@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+  body {
+    margin: 0;
+  }
+`
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle/>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

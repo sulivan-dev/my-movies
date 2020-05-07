@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const UrlBaseImage = 'https://image.tmdb.org/t/p/w154';
@@ -14,7 +15,7 @@ const Container = styled.div`
   }
 `
 
-const MovieItem = styled.li`
+const MovieItem = styled(Link)`
   list-style: none;
   display: inline-block;
   background: url(${props => UrlBaseImage + props.movie.poster_path}) no-repeat;
@@ -47,6 +48,7 @@ export default ({ movies }) => {
           movies.map(movie => (
             <MovieItem key={ movie.id }
                        movie={movie}
+                       to={`/detail/${ movie.id }`}
             >
               <span>{ movie.title }</span>
             </MovieItem>

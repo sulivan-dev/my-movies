@@ -1,16 +1,9 @@
 import React from "react";
 import axios from 'axios';
-import styled from "styled-components";
 
 import Feature from "../components/Feature";
 import Premiere from "../components/Premiere";
-
-const SectionTitle = styled.h1`
-  background: rgba(120,144,156,1);
-  color: white;
-  margin: 0;
-  padding: 12px;
-`
+import SectionTitle from "../components/SectionTitle";
 
 class HomePage extends React.Component {
 

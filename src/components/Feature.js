@@ -41,16 +41,27 @@ const MovieVoteAverage = styled.span`
   font-family: 'Cinzel', serif;
 `
 
+const Loading = styled.div`
+  text-align: center;
+  font-size: 22px;
+`
+
 export default ({ movie }) => {
-  return (
-    <Initial movie={movie}>
-      <MovieInfo>
-        <MovieContent>
-          <MovieTitle>{ movie.title }</MovieTitle>
-          <MovieOverview>{ movie.overview }</MovieOverview>
-          <MovieVoteAverage>{ movie.vote_average }/10</MovieVoteAverage>
-        </MovieContent>
-      </MovieInfo>
-    </Initial>
-  )
+  if (movie) {
+    return (
+      <Initial movie={movie}>
+        <MovieInfo>
+          <MovieContent>
+            <MovieTitle>{ movie.title }</MovieTitle>
+            <MovieOverview>{ movie.overview }</MovieOverview>
+            <MovieVoteAverage>{ movie.vote_average }/10</MovieVoteAverage>
+          </MovieContent>
+        </MovieInfo>
+      </Initial>
+    )
+  } else {
+    return (
+      <Loading>Cargando...</Loading>
+    )
+  }
 }

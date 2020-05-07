@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -13,7 +13,7 @@ class App extends Component {
         <div>
           <Header/>
           <Route exact path="/" component={ HomePage }/>
-          <Route exact path="/detail" component={ MovieDetail } />
+          <Route path="/detail/:movieId" component={ MovieDetail } />
           <Footer/>
         </div>
       </BrowserRouter>

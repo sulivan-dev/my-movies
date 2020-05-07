@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import Feature from "../components/Feature";
 import Premiere from "../components/Premiere";
@@ -16,6 +17,7 @@ class HomePage extends React.Component {
   componentDidMount() {
     this.getData();
     this.getUpcomingMovies();
+    console.log(this.props.test.test);
   }
 
   getData = async () => {
@@ -64,4 +66,10 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+function mapStateToProps({ test }) {
+  return {
+    test,
+  }
+}
+
+export default connect(mapStateToProps) (HomePage);

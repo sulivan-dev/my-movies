@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -11,7 +12,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Header/>
+          <Header date={ this.props.test.date }/>
           <Route exact path="/" component={ HomePage }/>
           <Route path="/detail/:movieId" component={ MovieDetail } />
           <Footer/>
@@ -21,4 +22,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps({ test }) {
+  return {
+    test,
+  }
+}
+
+export default connect(mapStateToProps) (App);

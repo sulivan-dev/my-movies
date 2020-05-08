@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const store = createStore(reducers, {}, applyMiddleware(promise, reduxThunk, logger));
+const store = createStore(reducers, {}, applyMiddleware(promise, reduxThunk));
 
 ReactDOM.render(
   <Provider store={ store }>

@@ -31,6 +31,10 @@ class Header extends React.Component  {
     textSearch: '',
   }
 
+  componentDidMount() {
+    this.props.clearSearch();
+  }
+
   onChangeSearch = (event) => {
     const { value } = event.target;
 
@@ -42,6 +46,7 @@ class Header extends React.Component  {
       });
     } else {
       this.onClearTextSearch();
+      this.props.clearSearch();
     }
   }
 

@@ -1,8 +1,7 @@
 import React from "react";
-import axios from 'axios';
 import { connect } from 'react-redux';
 
-import { getPremieres } from "../redux/actions/movieActions";
+import { getPremieres, getUpcoming } from "../redux/actions/movieActions";
 
 import Feature from "../components/Feature";
 import Premiere from "../components/Premiere";
@@ -10,56 +9,33 @@ import SectionTitle from "../components/SectionTitle";
 
 class HomePage extends React.Component {
 
-  state = {
-    featureMovie: '',
-    upcomingMovies: [],
-  }
-
   componentDidMount() {
     this.props.getPremieres();
-    this.getUpcomingMovies();
-  }
-
-  getUpcomingMovies = async () => {
-    try {
-      const results = await axios.get('https://api.themoviedb.org/3/movie/upcoming?api_key=a31ebe679ead5ce44960b901d92b8cf1&language=es');
-
-      this.setState({
-        upcomingMovies: results.data.results
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  setFeatureMovie = (movies) => {
-    const featureMovie = movies[Math.floor(Math.random() * movies.length)];
-
-    this.setState({
-      featureMovie: featureMovie
-    })
+    this.props.getUpcoming();
   }
 
   render() {
     return (
       <div>
-        <Feature movie={ this.state.featureMovie }/>
+        <Feature movie={ this.props.premieres.featureMovie }/>
         <SectionTitle>Estrenos:</SectionTitle>
         <Premiere movies={ this.props.premieres.data }/>
         <SectionTitle>Próximamente:</SectionTitle>
-        <Premiere movies={ this.state.upcomingMovies }/>
+        <Premiere movies={ this.props.upcoming.data }/>
       </div>
     );
   }
 }
 
-function mapStateToProps({ test, premieres }) {
+function mapStateToProps({ test, premieres, upcoming }) {
   return {
     test,
     premieres,
+    upcoming,
   }
 }
 
 export default connect(mapStateToProps, {
   getPremieres,
+  getUpcoming,
 }) (HomePage);

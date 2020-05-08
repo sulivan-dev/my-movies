@@ -18,3 +18,17 @@ export const getUpcoming = () => dispatch => {
     payload: axios.get(`${URL_BASE}/upcoming?api_key=${KEY}&language=${LANGUAGE}`)
   })
 }
+
+export const getCredits = (movieId) => dispatch => {
+  dispatch ({
+    type: type.GET_CREDITS_MOVIES,
+    payload: axios.get(`${URL_BASE}/${movieId}/credits?api_key=${KEY}&language=${LANGUAGE}`)
+  })
+}
+
+export const getDetails = (movieId) => dispatch => {
+  dispatch ({
+    type: type.GET_DETAILS_MOVIES,
+    payload: axios.get(`${URL_BASE}/${movieId}?api_key=${KEY}&language=${LANGUAGE}`)
+  })
+}

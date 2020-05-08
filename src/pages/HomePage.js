@@ -6,6 +6,7 @@ import { getPremieres, getUpcoming } from "../redux/actions/movieActions";
 import Feature from "../components/Feature";
 import Premiere from "../components/Premiere";
 import SectionTitle from "../components/SectionTitle";
+import Header from "../components/Header";
 
 class HomePage extends React.Component {
 
@@ -17,6 +18,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
+        <Header path={this.props.match.path}/>
         <Feature movie={ this.props.premieres.featureMovie }/>
         <SectionTitle>Estrenos:</SectionTitle>
         <Premiere movies={ this.props.premieres.data }/>
@@ -27,9 +29,8 @@ class HomePage extends React.Component {
   }
 }
 
-function mapStateToProps({ test, premieres, upcoming }) {
+function mapStateToProps({ premieres, upcoming }) {
   return {
-    test,
     premieres,
     upcoming,
   }

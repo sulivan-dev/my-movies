@@ -5,6 +5,7 @@ import { getCredits, getDetails } from "../redux/actions/movieActions";
 
 import Feature from "../components/Feature";
 import Cast from "../components/Cast";
+import Header from "../components/Header";
 
 class MovieDetail extends React.Component {
 
@@ -17,6 +18,7 @@ class MovieDetail extends React.Component {
   render() {
     return (
       <div>
+        <Header date={ this.props.test.date }/>
         <Feature movie={ this.props.details.data }/>
         <Cast cast={ this.props.credits.data } />
       </div>
@@ -24,8 +26,9 @@ class MovieDetail extends React.Component {
   }
 }
 
-function mapStateToProps({ credits, details }) {
+function mapStateToProps({ test, credits, details }) {
   return {
+    test,
     credits,
     details,
   }

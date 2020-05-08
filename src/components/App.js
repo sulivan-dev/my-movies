@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import { updateDate } from "../redux/actions/testActions";
 
-import Header from "./Header";
 import Footer from "./Footer";
 import HomePage from "../pages/HomePage";
 import MovieDetail from "../pages/MovieDetail";
@@ -19,7 +18,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Header date={ this.props.test.date }/>
           <Route exact path="/" component={ HomePage }/>
           <Route path="/detail/:movieId" component={ MovieDetail } />
           <Footer/>

@@ -4,6 +4,7 @@ import premieres from './premiereReducer';
 import upcoming from './upcomingReducer';
 import credits from './creditReducer';
 import details from './detailReducer';
+import search from './searchReducer';
 
 export default combineReducers({
   test,
@@ -11,4 +12,5 @@ export default combineReducers({
   upcoming,
   credits,
   details,
+  search,
 })

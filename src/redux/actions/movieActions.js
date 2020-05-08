@@ -2,6 +2,7 @@ import type from './type';
 import axios from 'axios';
 
 const URL_BASE = 'https://api.themoviedb.org/3/movie';
+const URL_BASE_SEARCH = 'https://api.themoviedb.org/3';
 const KEY = 'a31ebe679ead5ce44960b901d92b8cf1';
 const LANGUAGE = 'es';
 
@@ -30,5 +31,12 @@ export const getDetails = (movieId) => dispatch => {
   dispatch ({
     type: type.GET_DETAILS_MOVIES,
     payload: axios.get(`${URL_BASE}/${movieId}?api_key=${KEY}&language=${LANGUAGE}`)
+  })
+}
+
+export const getSearch = (queryStrings) => dispatch => {
+  dispatch ({
+    type: type.SEARCH_MOVIES,
+    payload: axios.get(`${URL_BASE_SEARCH}/search/movie?query=${queryStrings}&api_key=${KEY}&language=${LANGUAGE}`)
   })
 }

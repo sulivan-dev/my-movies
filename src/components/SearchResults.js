@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const UrlBaseImage = 'https://image.tmdb.org/t/p/w185';
@@ -9,7 +10,7 @@ const Container = styled.div`
   flex-wrap: wrap;
 `
 
-const Item = styled.div`
+const Item = styled(Link)`
   background: url(${ props => UrlBaseImage + props.movie.poster_path}) no-repeat;
   background-size: cover;
   height: 300px;
@@ -21,7 +22,7 @@ export default ({ data }) => {
     <Container>
       {
         data.map(movie => (
-          <Item movie={ movie } />
+          <Item key={movie.id} movie={ movie } to={`/detail/${movie.id}`}/>
         ))
       }
     </Container>

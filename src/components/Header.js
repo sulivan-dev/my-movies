@@ -33,11 +33,16 @@ class Header extends React.Component  {
 
   onChangeSearch = (event) => {
     const { value } = event.target;
-    this.props.getSearch(value);
 
-    this.setState({
-      textSearch: value,
-    });
+    if (value) {
+      this.props.getSearch(value);
+
+      this.setState({
+        textSearch: value,
+      });
+    } else {
+      this.onClearTextSearch();
+    }
   }
 
   onClearTextSearch = () => {

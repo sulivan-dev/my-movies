@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from 'react-redux';
 
-import Header from "./Header";
+import { updateDate } from "../redux/actions/testActions";
+
 import Footer from "./Footer";
 import HomePage from "../pages/HomePage";
 import MovieDetail from "../pages/MovieDetail";
 
 class App extends Component {
+
+  componentDidMount() {
+    setInterval(this.props.updateDate, 1000);
+  }
+
   render() {
     return (
       <BrowserRouter>
         <div>
-          <Header/>
           <Route exact path="/" component={ HomePage }/>
           <Route path="/detail/:movieId" component={ MovieDetail } />
           <Footer/>
@@ -21,4 +27,12 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps({ test }) {
+  return {
+    test,
+  }
+}
+
+export default connect(mapStateToProps, {
+  updateDate,
+}) (App);

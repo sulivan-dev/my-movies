@@ -1,5 +1,13 @@
+import 'font-awesome/css/font-awesome.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware } from "redux";
+import logger from 'redux-logger';
+import reduxThunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
+import { Provider } from 'react-redux';
+
+import reducers from './redux/reducers';
 
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
@@ -12,11 +20,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const store = createStore(reducers, {}, applyMiddleware(promise, reduxThunk));
+
 ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyle/>
-    <App />
-  </React.StrictMode>,
+  <Provider store={ store }>
+      <GlobalStyle/>
+      <App />
+  </Provider>,
   document.getElementById('root')
 );
 

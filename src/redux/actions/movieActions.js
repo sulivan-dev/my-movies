@@ -40,3 +40,9 @@ export const getSearch = (queryStrings) => dispatch => {
     payload: axios.get(`${URL_BASE_SEARCH}/search/movie?query=${queryStrings}&api_key=${KEY}&language=${LANGUAGE}`)
   })
 }
+
+export const clearSearch = () => {
+    return {
+      type: type.CLEAR_SEARCH_MOVIES,
+    }
+}

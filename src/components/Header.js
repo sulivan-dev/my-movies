@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-import { getSearch } from "../redux/actions/movieActions";
+import { getSearch, clearSearch } from "../redux/actions/movieActions";
 
 import Search from "./Search";
 
@@ -27,9 +27,25 @@ const Date = styled.div`
 
 class Header extends React.Component  {
 
+  state = {
+    textSearch: '',
+  }
+
   onChangeSearch = (event) => {
-    console.log(event.target.value);
-    this.props.getSearch(event.target.value);
+    const { value } = event.target;
+    this.props.getSearch(value);
+
+    this.setState({
+      textSearch: value,
+    });
+  }
+
+  onClearTextSearch = () => {
+    this.setState({
+      textSearch: ''
+    });
+
+    this.props.clearSearch();
   }
 
   render() {
@@ -37,7 +53,9 @@ class Header extends React.Component  {
       <Container>
         <h3>That's my movie</h3>
         {
-          this.props.path === "/" && <Search onChangeSearch={this.onChangeSearch}/>
+          this.props.path === "/" && <Search onChangeSearch={this.onChangeSearch}
+                                             clear={this.onClearTextSearch}
+                                             textSearch={this.state.textSearch}/>
         }
         <Date>{ this.props.test.date.toLocaleString() }</Date>
       </Container>
@@ -47,10 +65,11 @@ class Header extends React.Component  {
 
 function mapStateToProps({ test }) {
   return {
-    test
+    test,
   }
 }
 
 export default connect(mapStateToProps, {
   getSearch,
+  clearSearch,
 }) (Header);

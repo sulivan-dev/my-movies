@@ -12,6 +12,10 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         data: results,
       });
+    case type.CLEAR_SEARCH_MOVIES:
+      return Object.assign({}, state, {
+        data: [],
+      });
     default:
       return state;
   }

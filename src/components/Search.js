@@ -23,11 +23,19 @@ const SearchInput = styled.input`
   }
 `
 
-export default ({ onChangeSearch }) => {
+const ClearBottom = styled.a`
+  color: white;
+  cursor: pointer;
+`
+
+export default ({ onChangeSearch, clear, textSearch }) => {
   return(
     <SearchContainer>
       <i className="fa fa-search fa-lg" aria-hidden="true"/>
-      <SearchInput placeholder="Buscar" onChange={ onChangeSearch }/>
+      <SearchInput placeholder="Buscar" onChange={ onChangeSearch } value={textSearch}/>
+      <ClearBottom onClick={clear}>
+        <i className="fa fa-close fa-lg" aria-hidden="true"/>
+      </ClearBottom>
     </SearchContainer>
   )
 }

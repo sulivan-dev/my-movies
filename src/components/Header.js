@@ -23,7 +23,7 @@ export default ({ date }) => {
   return (
     <Container>
       <h3>That's my movie</h3>
-      <Date>{ date.toString() }</Date>
+      <Date>{ date.toLocaleString() }</Date>
     </Container>
   )
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const UrlBaseImage = 'https://image.tmdb.org/t/p/w154';
+const UrlBaseImage = `${process.env.REACT_APP_IMAGE_BASE_URL}/w154`;
 
 const Container = styled.div`
   > ul {

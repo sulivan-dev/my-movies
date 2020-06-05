@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const UrlBaseImage = 'https://image.tmdb.org/t/p/w780';
+const UrlBaseImage = `${process.env.REACT_APP_IMAGE_BASE_URL}/w780`;
 
 const Initial = styled.div`
   font-family: 'Anton', sans-serif;

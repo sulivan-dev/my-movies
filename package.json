@@ -1,4 +1,5 @@
 {
+  "homepage": "http://sulivan-dev.github.io/my-movies",
   "name": "my-movies",
   "version": "0.1.0",
   "private": true,
@@ -23,6 +24,7 @@
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
 
 import { updateDate } from "../redux/actions/testActions";
@@ -16,13 +16,13 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Switch>
           <Route exact path="/" component={ HomePage }/>
           <Route path="/detail/:movieId" component={ MovieDetail } />
           <Footer/>
-        </div>
-      </BrowserRouter>
+        </Switch>
+      </Router>
     );
   }
 }

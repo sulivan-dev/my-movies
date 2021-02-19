@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/static/js/main.672980b5.chunk.js",
-    "main.js.map": "/static/js/main.672980b5.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.04e3d1eb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.04e3d1eb.js.map",
-    "static/css/2.fa349ff9.chunk.css": "/static/css/2.fa349ff9.chunk.css",
-    "static/js/2.42424ea2.chunk.js": "/static/js/2.42424ea2.chunk.js",
-    "static/js/2.42424ea2.chunk.js.map": "/static/js/2.42424ea2.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.1e3eb0f6cb5e063cdc15dfb33fc8514b.js": "/precache-manifest.1e3eb0f6cb5e063cdc15dfb33fc8514b.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.fa349ff9.chunk.css.map": "/static/css/2.fa349ff9.chunk.css.map",
-    "static/js/2.42424ea2.chunk.js.LICENSE.txt": "/static/js/2.42424ea2.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.fee66e71.woff",
-    "static/media/logo.svg": "/static/media/logo.08392f18.svg"
+    "main.js": "/my-movies/static/js/main.346131df.chunk.js",
+    "main.js.map": "/my-movies/static/js/main.346131df.chunk.js.map",
+    "runtime-main.js": "/my-movies/static/js/runtime-main.78ffea68.js",
+    "runtime-main.js.map": "/my-movies/static/js/runtime-main.78ffea68.js.map",
+    "static/css/2.bfcdb919.chunk.css": "/my-movies/static/css/2.bfcdb919.chunk.css",
+    "static/js/2.9358eddd.chunk.js": "/my-movies/static/js/2.9358eddd.chunk.js",
+    "static/js/2.9358eddd.chunk.js.map": "/my-movies/static/js/2.9358eddd.chunk.js.map",
+    "index.html": "/my-movies/index.html",
+    "precache-manifest.75b779e0b5546150eae8dd639181db62.js": "/my-movies/precache-manifest.75b779e0b5546150eae8dd639181db62.js",
+    "service-worker.js": "/my-movies/service-worker.js",
+    "static/css/2.bfcdb919.chunk.css.map": "/my-movies/static/css/2.bfcdb919.chunk.css.map",
+    "static/js/2.9358eddd.chunk.js.LICENSE.txt": "/my-movies/static/js/2.9358eddd.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/my-movies/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/logo.svg": "/my-movies/static/media/logo.08392f18.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.04e3d1eb.js",
-    "static/css/2.fa349ff9.chunk.css",
-    "static/js/2.42424ea2.chunk.js",
-    "static/js/main.672980b5.chunk.js"
+    "static/js/runtime-main.78ffea68.js",
+    "static/css/2.bfcdb919.chunk.css",
+    "static/js/2.9358eddd.chunk.js",
+    "static/js/main.346131df.chunk.js"
   ]
 }
